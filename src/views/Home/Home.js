@@ -113,6 +113,9 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
+    highlightNavBar: {
+        color: theme.palette.secondary.dark
+    },
     highlight: {
         backgroundColor: theme.palette.background.default
     },
@@ -168,8 +171,17 @@ const Home = (props) => {
                 <Hidden smDown>
                     <Toolbar className={classes.navBar}>
                         {screens.map((screen, index) => 
-                            <Link key={screen.concat(index)} activeClass="active" className={`screen${index + 1}`} to={`screen${index + 1}`} spy={true} smooth={true} duration={500} >
-                                <Button color="inherit" className={classes.navBarItem}>{screen}</Button>
+                            <Link 
+                                key={screen.concat(index)} 
+                                activeClass="active" 
+                                className={`screen${index + 1}`} 
+                                to={`screen${index + 1}`} 
+                                spy={true} 
+                                smooth={true} 
+                                duration={500} 
+                                onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
+                            >
+                                <Button color="inherit" className={currnetScreen === `screen${index + 1}` ? [classes.navBarItem, classes.highlightNavBar].join(' ') : classes.navBarItem}>{screen}</Button>
                             </Link>
                         )}
                     </Toolbar>
@@ -191,7 +203,7 @@ const Home = (props) => {
                                         duration={500}
                                         onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
                                     >
-                                        <ListItem className={currnetScreen === `screen${index + 1}` ? [classes.drawerItem, classes.highlight]: classes.drawerItem}>
+                                        <ListItem className={currnetScreen === `screen${index + 1}` ? [classes.drawerItem, classes.highlight].join(' '): classes.drawerItem}>
                                             <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
                                             <ListItemText className={classes.drawerItemText}>{screen}</ListItemText>
                                         </ListItem>
