@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     mainHeader: {
         color: theme.palette.white,
+        fontFamily: theme.typography.h6.fontFamily,
         [theme.breakpoints.between('sm', 'xl')]: {
             fontSize: '78px',
             fontWeight: theme.typography.h1.fontWeight
@@ -43,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: 'pre-wrap',
         color: theme.palette.white,
         fontWeight: theme.typography.subtitle2.fontWeight,
+        fontFamily: theme.typography.h6.fontFamily,
         [theme.breakpoints.between('sm', 'xl')]: {
             fontSize: '22px',
             
@@ -98,7 +100,9 @@ const useStyles = makeStyles((theme) => ({
         background: colors.gradient,
     },
     navBarItem: {
-        marginLeft: '5%'
+        marginLeft: '5%',
+        fontFamily: theme.typography.h6.fontFamily,
+        fontWeight: theme.typography.h5.fontWeight,
     },
     drawerList: {
         width: 250
@@ -109,9 +113,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
+    highlight: {
+        backgroundColor: theme.palette.background.default
+    },
     drawerItemText: {
         marginLeft: '-4%',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: theme.typography.h6.fontFamily,
+        fontWeight: theme.typography.h5.fontWeight,
     },
     hamburgerIcon: {
         alignSelf: 'flex-start'
@@ -125,6 +134,7 @@ const useStyles = makeStyles((theme) => ({
 const Home = (props) => {
     const classes = useStyles();
     const [openDrawer, setOpenDrawer] = useState(false);
+    const [currnetScreen, setCurrentScreen] = useState('screen1');
 
     const toggleDrawer = () => {
         setOpenDrawer(prevStateOpened => prevStateOpened ? false : true);
@@ -172,8 +182,16 @@ const Home = (props) => {
                         <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
                             <List className={classes.drawerList}>
                                 {screens.map((screen, index) => 
-                                    <Link key={screen.concat(index)} activeClass="active" className={`screen${index + 1}`} to={`screen${index + 1}`} spy={true} smooth={true} duration={500}>
-                                        <ListItem className={classes.drawerItem}>
+                                    <Link 
+                                        key={screen.concat(index)} activeClass="active" 
+                                        className={`screen${index + 1}`} 
+                                        to={`screen${index + 1}`} 
+                                        spy={true} 
+                                        smooth={true} 
+                                        duration={500}
+                                        onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
+                                    >
+                                        <ListItem className={currnetScreen === `screen${index + 1}` ? [classes.drawerItem, classes.highlight]: classes.drawerItem}>
                                             <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
                                             <ListItemText className={classes.drawerItemText}>{screen}</ListItemText>
                                         </ListItem>

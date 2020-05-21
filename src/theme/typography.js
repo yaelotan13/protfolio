@@ -54,10 +54,11 @@ export default {
     fontSize: '16px',
     letterSpacing: '-0.05px',
     lineHeight: '30px',
+    fontFamily: "'Muli', sans-serif",
   },
   subtitle2: {
     color: palette.text.secondary,
-    fontWeight: 100,
+    fontWeight: 300,
     fontSize: '14px',
     letterSpacing: '-0.05px',
     lineHeight: '21px',
