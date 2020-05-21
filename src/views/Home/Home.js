@@ -11,10 +11,11 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { Link, Element } from 'react-scroll';
 
 import { colors } from '../../constants';
+import AboutMe from '../AboutMe';
 
 const useStyles = makeStyles((theme) => ({
     firstScreen: {
-        backgroundColor: '#536dfe',
+        background: colors.gradient,
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -24,8 +25,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '20vh',
     },
     mainHeader: {
+        color: theme.palette.white,
         [theme.breakpoints.between('sm', 'xl')]: {
             fontSize: '78px',
+            fontWeight: theme.typography.h1.fontWeight
         },
         [theme.breakpoints.down('xs')]: {
             fontSize: '40px',
@@ -38,8 +41,11 @@ const useStyles = makeStyles((theme) => ({
     },
     whoAmI: {
         whiteSpace: 'pre-wrap',
+        color: theme.palette.white,
+        fontWeight: theme.typography.subtitle2.fontWeight,
         [theme.breakpoints.between('sm', 'xl')]: {
             fontSize: '22px',
+            
         },
         [theme.breakpoints.down('xs')]: {
             fontSize: '12px',
@@ -57,7 +63,8 @@ const useStyles = makeStyles((theme) => ({
         animationName: 'move',
         animationDuration: '2s',
         animationIterationCount: 'infinite',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        color: theme.palette.white,
     },
     separator: {
         color: colors.darkGrey,
@@ -66,7 +73,10 @@ const useStyles = makeStyles((theme) => ({
     secondScreen: {
         height: '100vh',
         width: '100vw',
-        backgroundColor: 'green'
+        backgroundColor: 'white',
+        [theme.breakpoints.down('xs')]: {
+            height: '180vh',
+        }
     },
     thirdScreen: {
         height: '100vh',
@@ -80,10 +90,12 @@ const useStyles = makeStyles((theme) => ({
     },
     navBarContainer: {
         marginLeft: '1%',
-        display: 'flex'
+        display: 'flex',
+        background: colors.gradient,
     },
     navBar: {
         justifyContent: 'flex-end',
+        background: colors.gradient,
     },
     navBarItem: {
         marginLeft: '5%'
@@ -155,7 +167,7 @@ const Home = (props) => {
                 <Hidden smUp>
                     <Fragment>
                         <IconButton className={classes.hamburgerIcon} onClick={() => toggleDrawer()}>
-                            <MenuIcon />
+                            <MenuIcon style={{ color: 'white' }} />
                         </IconButton>
                         <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
                             <List className={classes.drawerList}>
@@ -226,9 +238,7 @@ const Home = (props) => {
             <Element name="screen2" className="element">
                 <ScrollAnimation animateIn="fadeIn">
                     <Box className={classes.secondScreen}>
-                        <Box className={classes.iconsConatiner}>
-
-                        </Box>
+                        <AboutMe  />
                     </Box>
                 </ScrollAnimation>
             </Element>
