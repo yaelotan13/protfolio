@@ -1,17 +1,14 @@
-import React, { useState, Fragment } from 'react';
-import { Box, Typography, IconButton, List, Drawer, ListItemText, Hidden, AppBar, Toolbar, Button, ListItemIcon, ListItem } from '@material-ui/core';
+import React from 'react';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ScrollAnimation from 'react-animate-on-scroll';
-import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import FaceIcon from '@material-ui/icons/Face';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { Link, Element } from 'react-scroll';
+
+import { Element } from 'react-scroll';
 
 import { colors } from '../../constants';
 import AboutMe from '../AboutMe';
+import Projects from '../Projects';
+import { Navigation, HomeScreen } from './components';
 
 const useStyles = makeStyles((theme) => ({
     firstScreen: {
@@ -21,248 +18,38 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    content: {
-        marginTop: '20vh',
-    },
-    mainHeader: {
-        color: theme.palette.white,
-        fontFamily: theme.typography.h6.fontFamily,
-        [theme.breakpoints.between('sm', 'xl')]: {
-            fontSize: '78px',
-            fontWeight: theme.typography.h1.fontWeight
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '40px',
-        }
-    },
-    whoAmIContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        marginTop: '8%',
-    },
-    whoAmI: {
-        whiteSpace: 'pre-wrap',
-        color: theme.palette.white,
-        fontWeight: theme.typography.subtitle2.fontWeight,
-        fontFamily: theme.typography.h6.fontFamily,
-        [theme.breakpoints.between('sm', 'xl')]: {
-            fontSize: '22px',
-            
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '12px',
-        }
-    },
-    "@keyframes move": {
-        "0%":   { bottom: 0 },
-        "50%":  { bottom: 50 },
-        "100%": { bottom: 0 }
-    },
-    icon: {
-        marginTop: '50vh',
-        height: 60,
-        width: 60,
-        animationName: 'move',
-        animationDuration: '2s',
-        animationIterationCount: 'infinite',
-        cursor: 'pointer',
-        color: theme.palette.white,
-    },
-    separator: {
-        color: colors.darkGrey,
-        display: 'inline'
-    },
     secondScreen: {
         height: '100vh',
         width: '100vw',
-        backgroundColor: 'white',
+        backgroundColor: theme.palette.white,
         [theme.breakpoints.down('xs')]: {
             height: '180vh',
         }
     },
     thirdScreen: {
-        height: '100vh',
+        height: '140vh',
         width: '100vw',
-        backgroundColor: 'orange'
+        backgroundColor: theme.palette.background.default,
+        [theme.breakpoints.down('xs')]: {
+            height: '240vh',
+        }
     },
     firthScreen: {
         height: '100vh',
         width: '100vw',
-        backgroundColor: 'purple'
+        backgroundColor: theme.palette.white
     },
-    navBarContainer: {
-        marginLeft: '1%',
-        display: 'flex',
-        background: colors.gradient,
-    },
-    navBar: {
-        justifyContent: 'flex-end',
-        background: colors.gradient,
-    },
-    navBarItem: {
-        marginLeft: '5%',
-        fontFamily: theme.typography.h6.fontFamily,
-        fontWeight: theme.typography.h5.fontWeight,
-    },
-    drawerList: {
-        width: 250
-    },
-    drawerItem: {
-        color: 'grey',
-        marginTop: '5%',
-        display: 'flex',
-        alignItems: 'center',
-    },
-    highlightNavBar: {
-        color: theme.palette.secondary.dark
-    },
-    highlight: {
-        backgroundColor: theme.palette.background.default
-    },
-    drawerItemText: {
-        marginLeft: '-4%',
-        fontWeight: 'bold',
-        fontFamily: theme.typography.h6.fontFamily,
-        fontWeight: theme.typography.h5.fontWeight,
-    },
-    hamburgerIcon: {
-        alignSelf: 'flex-start'
-    },
-    devLangaugeIcon: {
-        width: 100,
-        height: 100
-    }
 }));       
  
 const Home = (props) => {
     const classes = useStyles();
-    const [openDrawer, setOpenDrawer] = useState(false);
-    const [currnetScreen, setCurrentScreen] = useState('screen1');
-
-    const toggleDrawer = () => {
-        setOpenDrawer(prevStateOpened => prevStateOpened ? false : true);
-    };
-
-    const screens = ['Home', 'About', 'Projects', 'Conatct'];
-    
-    const getDrawerIcon = (index) => {
-        switch (index) {
-            case 0: {
-                return <HomeIcon />
-            }
-            case 1: {
-                return <FaceIcon />
-            }
-            case 2: {
-                return <WhatshotIcon />
-            }
-            case 3: {
-                return <MailOutlineIcon />
-            }
-            default: {
-                return <HomeIcon />
-            }
-        }
-    };
 
     return (
         <Box>
-            <AppBar className={classes.navBarContainer}>
-                <Hidden smDown>
-                    <Toolbar className={classes.navBar}>
-                        {screens.map((screen, index) => 
-                            <Link 
-                                key={screen.concat(index)} 
-                                activeClass="active" 
-                                className={`screen${index + 1}`} 
-                                to={`screen${index + 1}`} 
-                                spy={true} 
-                                smooth={true} 
-                                duration={500} 
-                                onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
-                            >
-                                <Button color="inherit" className={currnetScreen === `screen${index + 1}` ? [classes.navBarItem, classes.highlightNavBar].join(' ') : classes.navBarItem}>{screen}</Button>
-                            </Link>
-                        )}
-                    </Toolbar>
-                </Hidden>
-                <Hidden smUp>
-                    <Fragment>
-                        <IconButton className={classes.hamburgerIcon} onClick={() => toggleDrawer()}>
-                            <MenuIcon style={{ color: 'white' }} />
-                        </IconButton>
-                        <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
-                            <List className={classes.drawerList}>
-                                {screens.map((screen, index) => 
-                                    <Link 
-                                        key={screen.concat(index)} activeClass="active" 
-                                        className={`screen${index + 1}`} 
-                                        to={`screen${index + 1}`} 
-                                        spy={true} 
-                                        smooth={true} 
-                                        duration={500}
-                                        onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
-                                    >
-                                        <ListItem className={currnetScreen === `screen${index + 1}` ? [classes.drawerItem, classes.highlight].join(' '): classes.drawerItem}>
-                                            <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
-                                            <ListItemText className={classes.drawerItemText}>{screen}</ListItemText>
-                                        </ListItem>
-                                    </Link>
-                                )}
-                            </List>
-                        </Drawer>
-                    </Fragment>
-                </Hidden>
-            </AppBar>
+            <Navigation />
             <Element name="screen1" className="element" >
                 <Box className={classes.firstScreen}>
-                    <ScrollAnimation 
-                        animateIn='fadeIn'
-                        delay={1000}
-                        duration={2}
-                        initiallyVisible={false}
-                        animateOnce={true}
-                    >
-                        <Box className={classes.content}>
-                            <Typography className={classes.mainHeader} variant="h1">Hello, I am Yael</Typography>
-                            <Box className={classes.whoAmIContainer}>
-                                <ScrollAnimation
-                                    animateIn='fadeInDown'
-                                    delay={1500}
-                                    initiallyVisible={false}
-                                    animateOnce={true}
-                                >
-                                    <Typography className={classes.whoAmI} variant="h5">Fullstack developer 👩🏻‍💻 |  </Typography>
-                                </ScrollAnimation>
-                                <ScrollAnimation
-                                    animateIn='fadeInDown'
-                                    delay={2000}
-                                    initiallyVisible={false}
-                                    animateOnce={true}
-                                >
-                                    <Typography className={classes.whoAmI} variant="h5"> sushi lover 🍣  | </Typography>
-                                </ScrollAnimation>
-                                <ScrollAnimation
-                                    animateIn='fadeInDown'
-                                    delay={2500}
-                                    initiallyVisible={false}
-                                    animateOnce={true}
-                                >
-                                    <Typography className={classes.whoAmI} variant="h5"> volleyball player 🏐</Typography>
-                                </ScrollAnimation>
-                            </Box>          
-                        </Box>
-                        <ScrollAnimation
-                            animateIn='fadeInDown'
-                            delay={3500}
-                            initiallyVisible={false}
-                            animateOnce={true}
-                        >
-                            <Link activeClass="active" className="screen2" to="screen2" spy={true} smooth={true} duration={500}>
-                                <ExpandMoreIcon className={classes.icon} />
-                            </Link>
-                        </ScrollAnimation>
-                    </ScrollAnimation>
+                 <HomeScreen />
                 </Box>
             </Element>
             <Element name="screen2" className="element">
@@ -275,7 +62,7 @@ const Home = (props) => {
             <Element name="screen3" className="element">
                 <ScrollAnimation animateIn="fadeIn">
                     <Box className={classes.thirdScreen}>
-                        hello again
+                        <Projects />
                     </Box>
                 </ScrollAnimation>
             </Element>  
