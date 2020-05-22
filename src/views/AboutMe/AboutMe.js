@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 import { DevLanguagesLogos, Educations } from './components';
+import { SubTitle } from '../../components';
 
 const useStyle = makeStyles((theme) => ({
     container: {
@@ -16,14 +16,6 @@ const useStyle = makeStyles((theme) => ({
             height: '100vh',
         }
     },
-    title: {
-        marginBottom: '2%',
-        [theme.breakpoints.down('xs')]: {
-            marginLeft: '12%',
-            marginBottom: '8%',
-            fontSize: '20px',
-        }
-    }
 }));
 
 const AboutMe = (props) => {
@@ -32,25 +24,11 @@ const AboutMe = (props) => {
     return (
         <Box className={classes.container}>
             <Box className={classes.educationContainer}>
-                <ScrollAnimation 
-                    animateIn='fadeIn'
-                    delay={200}
-                    initiallyVisible={false}
-                    animateOnce={true}
-                >
-                    <Typography className={classes.title} variant="h3" align="left">Education</Typography>
-                </ScrollAnimation>
+                <SubTitle delay={200} title="Education" />
                 <Educations />
             </Box>
             <Box>
-                <ScrollAnimation 
-                    animateIn='fadeIn'
-                    delay={800}
-                    initiallyVisible={false}
-                    animateOnce={true}
-                >
-                     <Typography className={classes.title} variant="h3" align="left">Skills</Typography>
-                </ScrollAnimation>
+                <SubTitle delay={800} title="Skills" />
                 <DevLanguagesLogos />
             </Box>
         </Box>
