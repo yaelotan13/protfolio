@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     thirdScreen: {
-        height: '140vh',
+        height: '160vh',
         width: '100vw',
         backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('xs')]: {

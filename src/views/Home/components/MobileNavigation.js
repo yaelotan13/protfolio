@@ -15,7 +15,7 @@ const useStyle = makeStyles((theme) => ({
     },
     drawerItem: {
         color: 'grey',
-        marginTop: '5%',
+        marginTop: '2%',
         display: 'flex',
         alignItems: 'center',
     },

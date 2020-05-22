@@ -7,6 +7,7 @@ import { Project } from './components';
 import coronaMap from '../../assets/images/corona-map.png';
 import gifts from '../../assets/images/gifts-categories.png';
 import giftsProducts from '../../assets/images/gifts-products.png';
+import Eran from '../../assets/images/eran.png';
 import admin from '../../assets/images/admin.png';
 import adminTablet from '../../assets/images/adminTablet.png';
 import authServer from '../../assets/images/auth-server.png';
@@ -59,8 +60,9 @@ class ProjectData {
 const data = [
     new ProjectData(0, "Affiliate Gifts App", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'Postresql', 'AWS s3', 'mobile']),
     new ProjectData(1, "Authentication Server", authServer, ['React.JS', 'Redux', 'Node.js', 'Postresql', 'Express']),
-    new ProjectData(2, "Gift App Admin Website", admin, ['React.JS', 'material UI', 'Node.js', 'Postresql', 'AWS s3']),
-    new ProjectData(3, "Corona HeatMap", coronaMap, ['React.JS', 'material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'responsive']),
+    new ProjectData(4, "Professional Personal Website", Eran, ['React.JS', 'material UI', 'responsive']),
+    new ProjectData(2, "Gift App Admin Website", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'Postresql', 'AWS s3']),
+    new ProjectData(3, "Corona HeatMap", coronaMap, ['React.JS', 'Redux', 'material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'responsive']),
 ];
 
 const Projects = (props) => {
