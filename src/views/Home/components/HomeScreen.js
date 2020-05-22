@@ -90,7 +90,7 @@ const HomeScreen = (props) => {
                 </Box>
                 <ScrollAnimation
                     animateIn='fadeInDown'
-                    delay={3500}
+                    delay={2500}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
