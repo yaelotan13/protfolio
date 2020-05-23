@@ -16,6 +16,9 @@ const useStyle = makeStyles((theme) => ({
             height: '100vh',
         }
     },
+    skillsContainer: {
+        marginTop: '5vh'
+    }
 }));
 
 const AboutMe = (props) => {
@@ -27,7 +30,7 @@ const AboutMe = (props) => {
                 <SubTitle delay={200} title="Education" />
                 <Educations />
             </Box>
-            <Box>
+            <Box className={classes.skillsContainer}>
                 <SubTitle delay={800} title="Skills" />
                 <DevLanguagesLogos />
             </Box>

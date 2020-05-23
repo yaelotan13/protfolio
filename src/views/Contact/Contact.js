@@ -151,7 +151,7 @@ const Contact = (props) => {
                     </ScrollAnimation> 
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={2400}
+                        delay={2100}
                         initiallyVisible={false}
                         animateOnce={true}
                     >

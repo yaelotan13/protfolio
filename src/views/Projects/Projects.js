@@ -57,26 +57,15 @@ class ProjectData {
 };
 
 const data = [
-    new ProjectData(0, "Affiliate Gifts App", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'Postresql', 'AWS s3', 'mobile']),
-    new ProjectData(1, "Authentication Server", authServer, ['React.JS', 'Redux', 'Node.js', 'Postresql', 'Express']),
+    new ProjectData(0, "Affiliate Gifts App", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'Postresql', 'AWS S3', 'Mobile']),
+    new ProjectData(1, "Authentication Server", authServer, ['React.JS', 'Redux', 'Node.js', 'Postresql', 'Express', 'Tokens', 'Cookies']),
     new ProjectData(4, "Professional Personal Website", Eran, ['React.JS', 'material UI', 'responsive']),
-    new ProjectData(2, "Gift App Admin Website", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'Postresql', 'AWS s3']),
-    new ProjectData(3, "Corona HeatMap", coronaMap, ['React.JS', 'Redux', 'material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'responsive']),
+    new ProjectData(2, "Gift App Admin Website", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'Postresql', 'AWS S3']),
+    new ProjectData(3, "Corona HeatMap", coronaMap, ['React.JS', 'Redux', 'Material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'Responsive']),
 ];
 
 const Projects = (props) => {
     const classes = useStyle();
-
-    const getStyle = (index) => {
-        if (index === 0 || index === 2) {
-            return [classes.project, classes.small].join(' ');
-        }
-        if (index === 1 || index === 3) {
-            return [classes.project, classes.large].join(' ');
-        }
-
-        return [classes.project, classes.fullWidth].join(' ');
-    }
 
     return (
         <Box className={classes.container}>
@@ -94,7 +83,7 @@ const Projects = (props) => {
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Project 
                                     key={project.key} 
-                                    delay={index === 0 || index === 1 ? 800 : 1000}
+                                    delay={index * 300}
                                     title={project.title} 
                                     image={project.image} 
                                     tags={project.tags}
