@@ -8,6 +8,7 @@ import { Element } from 'react-scroll';
 import { colors } from '../../constants';
 import AboutMe from '../AboutMe';
 import Projects from '../Projects';
+import Contact from '../Contact';
 import { Navigation, HomeScreen } from './components';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,13 +32,13 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('xs')]: {
-            height: '240vh',
+            height: '300vh',
         }
     },
     firthScreen: {
         height: '100vh',
         width: '100vw',
-        backgroundColor: theme.palette.white
+        backgroundColor: theme.palette.white,
     },
 }));       
  
@@ -69,7 +70,7 @@ const Home = (props) => {
             <Element name="screen4" className="element">
                 <ScrollAnimation animateIn="fadeIn">
                     <Box className={classes.firthScreen}>
-                        goodbey now
+                        <Contact />
                     </Box>
                 </ScrollAnimation>
             </Element>              

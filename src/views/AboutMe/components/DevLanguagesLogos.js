@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme) => ({
 const DevLanguagesLogos = (props) => {
     const classes = useStyle();
     const logos = [HTML, CSS, JS, REACT, NODE, POSTGRESQL, SASS, TS, ES6, JAVA, C];
-    const INITIAL_DELAY = 700;
+    const INITIAL_DELAY = 500;
 
     return (
         <Box className={classes.container}>
@@ -39,7 +39,7 @@ const DevLanguagesLogos = (props) => {
                 {logos.map((logo, index) => 
                     <ScrollAnimation 
                         animateIn='fadeInUp'
-                        delay={INITIAL_DELAY + index * 180}
+                        delay={INITIAL_DELAY + index * 160}
                         initiallyVisible={false}
                         animateOnce={true}
                     >

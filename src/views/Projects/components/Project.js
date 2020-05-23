@@ -8,13 +8,12 @@ const useStyle = makeStyles((theme) => ({
         height: '40vh',
         width: '35vw',
         marginBottom: '3vh',
-        borderRadius: 10,
-        boxShadow: "2px 2px 1px #9E9E9E",
+        boxShadow: "2px 2px 3px 3px #9E9E9E",
         cursor: 'pointer',
         // backgroundColor: theme.palette.background.default,
         backgroundColor: theme.palette.white,
         [theme.breakpoints.down('xs')]: {
-            width: '85vw',
+            width: '75vw',
             marginBottom: '4vh',
             height: '50vh',
         }
@@ -45,7 +44,11 @@ const useStyle = makeStyles((theme) => ({
     },
     tag: {
         marginRight: '1%',
-        marginTop: '1%'
+        marginTop: '1%',
+        [theme.breakpoints.down('xs')]: {
+            marginRight: '2%',
+            marginTop: '2%',
+        }
     }
 }));
 
@@ -54,6 +57,8 @@ const Project = (props) => {
     const [hovered, setHovered] = useState(false);
     const { delay, title, image, tags } = props;
 
+    const toggleClicked = () => setHovered(hovered => !hovered ? true : false);
+        
     return (
         <ScrollAnimation 
             animateIn='fadeInUp'
@@ -61,7 +66,12 @@ const Project = (props) => {
             initiallyVisible={false}
             animateOnce={true}
         >
-            <Box className={classes.project} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+            <Box 
+                className={classes.project} 
+                onMouseEnter={() => setHovered(true)} 
+                onMouseLeave={() => setHovered(false)}
+                onClick={toggleClicked}
+            >
                 <Box 
                     className={classes.image}
                     style={{

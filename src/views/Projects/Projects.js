@@ -4,13 +4,12 @@ import { makeStyles } from '@material-ui/styles';
 
 import { SubTitle } from '../../components';
 import { Project } from './components';
-import coronaMap from '../../assets/images/corona-map.png';
-import gifts from '../../assets/images/gifts-categories.png';
-import giftsProducts from '../../assets/images/gifts-products.png';
-import Eran from '../../assets/images/eran.png';
-import admin from '../../assets/images/admin.png';
-import adminTablet from '../../assets/images/adminTablet.png';
-import authServer from '../../assets/images/auth-server.png';
+
+import mockAuthServerWhite from '../../assets/images/auth-white.png';
+import mockGiftsAppWhite from '../../assets/images/gifts-white.png';
+import mockGiftsAdminWhite from '../../assets/images/admin-white.png';
+import mockCoronaAppWhite from '../../assets/images/corona-white.png';
+import mockEranWhite from '../../assets/images/eran-white.png';
 
 const useStyle = makeStyles((theme) => ({
     container: {
@@ -31,19 +30,10 @@ const useStyle = makeStyles((theme) => ({
         height: '120vh',
         width: '75vw',
         justifyContent: 'space-between',
-        alignItems: 'space-between'
-    },
-    project: {
-        height: '40vh',
-        width: '30vw',
-        marginBottom: '3vh',
-        borderRadius: 10,
-        boxShadow: "2px 2px 1px 2px #9E9E9E",
-        backgroundColor: theme.palette.background.default,
+        alignItems: 'space-between',
         [theme.breakpoints.down('xs')]: {
-            width: '85vw',
-            marginBottom: '4vh',
-            height: '50vh',
+            flexDirection: 'column',
+            alignItems: 'center',
         }
     },
 }));
@@ -58,26 +48,15 @@ class ProjectData {
 };
 
 const data = [
-    new ProjectData(0, "Affiliate Gifts App", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'Postresql', 'AWS s3', 'mobile']),
-    new ProjectData(1, "Authentication Server", authServer, ['React.JS', 'Redux', 'Node.js', 'Postresql', 'Express']),
-    new ProjectData(4, "Professional Personal Website", Eran, ['React.JS', 'material UI', 'responsive']),
-    new ProjectData(2, "Gift App Admin Website", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'Postresql', 'AWS s3']),
-    new ProjectData(3, "Corona HeatMap", coronaMap, ['React.JS', 'Redux', 'material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'responsive']),
+    new ProjectData(0, "Affiliate Gifts App", mockGiftsAppWhite, ['React Native', 'Redux', 'Saga', 'Node.js', 'Postresql', 'AWS s3', 'mobile']),
+    new ProjectData(1, "Authentication Server", mockAuthServerWhite, ['React.JS', 'Node.js', 'Postresql', 'Express', 'Tokens', 'Cookies']),
+    new ProjectData(4, "Professional Personal Website", mockEranWhite, ['React.JS', 'material UI', 'responsive']),
+    new ProjectData(2, "Gift App Admin Website", mockGiftsAdminWhite, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'Postresql', 'AWS s3']),
+    new ProjectData(3, "Corona HeatMap", mockCoronaAppWhite, ['React.JS', 'Redux', 'material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'responsive']),
 ];
 
 const Projects = (props) => {
     const classes = useStyle();
-
-    const getStyle = (index) => {
-        if (index === 0 || index === 2) {
-            return [classes.project, classes.small].join(' ');
-        }
-        if (index === 1 || index === 3) {
-            return [classes.project, classes.large].join(' ');
-        }
-
-        return [classes.project, classes.fullWidth].join(' ');
-    }
 
     return (
         <Box className={classes.container}>
