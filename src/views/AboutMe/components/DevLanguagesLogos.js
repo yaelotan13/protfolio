@@ -39,7 +39,7 @@ const DevLanguagesLogos = (props) => {
                 {logos.map((logo, index) => 
                     <ScrollAnimation 
                         animateIn='fadeInUp'
-                        delay={INITIAL_DELAY + index * 160}
+                        delay={INITIAL_DELAY + index * 120}
                         initiallyVisible={false}
                         animateOnce={true}
                     >

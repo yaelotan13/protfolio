@@ -39,7 +39,7 @@ const Educations = (props) => {
                 {data.map((education, index) => 
                     <ScrollAnimation 
                         animateIn='fadeInUp'
-                        delay={INITIAL_DELAY + index * 300}
+                        delay={INITIAL_DELAY + index * 150}
                         initiallyVisible={false}
                         animateOnce={true}
                     >

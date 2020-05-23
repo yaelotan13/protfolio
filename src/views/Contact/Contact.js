@@ -123,7 +123,7 @@ const Contact = (props) => {
             <Box className={classes.content}>
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={800}
+                    delay={400}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -131,7 +131,7 @@ const Contact = (props) => {
                 </ScrollAnimation>   
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={1500}
+                    delay={800}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -140,7 +140,7 @@ const Contact = (props) => {
                 <Box className={classes.contactInfoContainer}>
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={2000}
+                        delay={1400}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
@@ -151,7 +151,7 @@ const Contact = (props) => {
                     </ScrollAnimation> 
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={2100}
+                        delay={1600}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
