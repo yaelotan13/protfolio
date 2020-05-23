@@ -4,11 +4,12 @@ import { makeStyles } from '@material-ui/styles';
 
 import { SubTitle } from '../../components';
 import { Project } from './components';
-import coronaMap from '../../assets/images/corona-map.png';
-import gifts from '../../assets/images/gifts-categories.png';
-import Eran from '../../assets/images/eran.png';
-import admin from '../../assets/images/admin.png';
-import authServer from '../../assets/images/auth-server.png';
+
+import coronaMap from '../../assets/images/corona-white.png';
+import gifts from '../../assets/images/gifts-white.png';
+import Eran from '../../assets/images/eran-white.png';
+import admin from '../../assets/images/admin-white.png';
+import authServer from '../../assets/images/auth-white.png';
 
 const useStyle = makeStyles((theme) => ({
     container: {
