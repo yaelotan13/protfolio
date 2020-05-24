@@ -68,7 +68,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5">Fullstack developer 👩🏻‍💻 |  </Typography>
+                            <Typography className={classes.whoAmI} variant="h5">Fullstack Developer 👩🏻‍💻 |  </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -76,7 +76,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> sushi lover 🍣  | </Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Sushi Lover 🍣  | </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -84,7 +84,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> volleyball player 🏐</Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Volleyball Player 🏐</Typography>
                         </ScrollAnimation>
                     </Box>          
                 </Box>

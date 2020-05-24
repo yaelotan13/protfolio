@@ -2,11 +2,10 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
-import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
+import phone from '../../assets/images/phone.png';
+import email from '../../assets/images/email.png';
 import rocket from '../../assets/images/rocket.gif';
-import { colors } from '../../constants/colors';
 
 const useStyle = makeStyles((theme) => ({
     container: {
@@ -58,18 +57,18 @@ const useStyle = makeStyles((theme) => ({
         width: '70%',
         backgroundImage:`url(${rocket})`,
         backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
         [theme.breakpoints.down('xs')]: {
             width: 300,
             height: 300,
-            backgroundSize: 'contain'
         }
     },
     contactInfoContainer: {
         display: 'flex',
         marginTop: '10vh',
-        width: '70%',
+        width: '45vw',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '90vw',
             flexDirection: 'column',
             marginTop: '5vh',
@@ -77,7 +76,7 @@ const useStyle = makeStyles((theme) => ({
         }
     },
     contactInfo: {
-        width: '15vw',
+        width: '20vw',
         height: '30vh',
         borderRadius: 10,
         boxShadow: "1px 1px 3px #9E9E9E",
@@ -85,8 +84,7 @@ const useStyle = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center', 
-        // background: colors.gradient,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '80vw',
             height: '10vh',
             flexDirection: 'row',
@@ -99,7 +97,7 @@ const useStyle = makeStyles((theme) => ({
         marginBottom: '3vh',
         height: '7vh',
         width: '7vw',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: '2vh',
             height: '6vh',
             width: '6vw',
@@ -107,9 +105,17 @@ const useStyle = makeStyles((theme) => ({
             marginRight: '5vw'
         }
     },
+    iphoneIcon: {
+        backgroundImage: `url(${phone})`,
+        backgroundSize: 'contain'
+    },
+    emailIcon: {
+        backgroundImage: `url(${email})`,
+        backgroundSize: 'contain'
+    },
     info: {
         fontSize: theme.typography.h5.fontSize,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: theme.typography.h6.fontSize,
         }
     }
@@ -123,7 +129,7 @@ const Contact = (props) => {
             <Box className={classes.content}>
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={800}
+                    delay={400}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -131,7 +137,7 @@ const Contact = (props) => {
                 </ScrollAnimation>   
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={1500}
+                    delay={800}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -140,24 +146,28 @@ const Contact = (props) => {
                 <Box className={classes.contactInfoContainer}>
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={2000}
+                        delay={1400}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
                         <Box className={classes.contactInfo}>
-                            <PhoneIphoneIcon className={classes.icon} />
-                            <Typography className={classes.info}>054-6323450</Typography>
+                            <Box className={[classes.icon, classes.iphoneIcon].join(" ")} />
+                            <Typography className={classes.info}>
+                                <a href="tel:054-6323450">054-6323450</a>
+                            </Typography>
                         </Box>
                     </ScrollAnimation> 
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={2400}
+                        delay={1600}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
                     <Box className={classes.contactInfo}>
-                        <MailOutlineIcon className={classes.icon} />
-                        <Typography className={classes.info}>yaelotan19@gmail.com</Typography>
+                        <Box className={[classes.icon, classes.emailIcon].join(" ")}/>
+                        <Typography className={classes.info}>
+                            <a href="mailto:yaelotan19@gmail.com">yaelotan19@gmail.com</a>
+                        </Typography>
                     </Box>
                     </ScrollAnimation> 
                 </Box>

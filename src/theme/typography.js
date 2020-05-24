@@ -19,7 +19,7 @@ export default {
   },
   h3: {
     color: palette.text.primary,
-    fontWeight: 500,
+    fontWeight: 700,
     fontSize: '24px',
     letterSpacing: '-0.06px',
     lineHeight: '28px',
