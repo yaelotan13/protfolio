@@ -1,13 +1,27 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-scroll';
 
+import yael from '../../../assets/images/me1.jpg';
+
 const useStyle = makeStyles((theme) => ({
     content: {
         marginTop: '20vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+    },
+    me: {
+        width: 150,
+        height: 150,
+        marginBottom: '5vh',
+        [theme.breakpoints.down('xs')]: {
+            width: 100,
+            height: 100
+        }
     },
     mainHeader: {
         color: theme.palette.white,
@@ -40,11 +54,12 @@ const useStyle = makeStyles((theme) => ({
         }
     },
     icon: {
-        marginTop: '50vh',
+        marginTop: '25vh',
         height: 60,
         width: 60,
         cursor: 'pointer',
         color: theme.palette.white,
+        // animation: 'MoveUpDown 1s linear infinite'
     },
 }));
 
@@ -61,6 +76,7 @@ const HomeScreen = (props) => {
                 animateOnce={true}
             >
                 <Box className={classes.content}>
+                    <Avatar className={classes.me} alt="Yael Lotan" src={yael} />
                     <Typography className={classes.mainHeader} variant="h1">Hello, I am Yael</Typography>
                     <Box className={classes.whoAmIContainer}>
                         <ScrollAnimation
