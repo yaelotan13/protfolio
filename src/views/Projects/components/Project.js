@@ -8,6 +8,7 @@ const useStyle = makeStyles((theme) => ({
         height: '50vh',
         width: '35vw',
         marginBottom: '3vh',
+        borderRadius: 10,
         boxShadow: "1px 1px 3px #9E9E9E",
         cursor: 'pointer',
         display: 'flex',
@@ -34,7 +35,6 @@ const useStyle = makeStyles((theme) => ({
     title: {
         marginTop: '2vh',
         fontFamily: theme.typography.h6.fontFamily,
-        // fontWeight: theme.typography.h5.fontWeight,
         fontWeight: 600,
         fontSize: theme.typography.h5.fontSize
     },
