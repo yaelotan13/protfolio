@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             marginLeft: '12%',
             marginTop: '-8%',
-            marginBottom: '16%',
+            marginBottom: '8%',
         }
     },
     gridContainer: {
