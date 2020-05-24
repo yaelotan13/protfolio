@@ -12,7 +12,7 @@ const useStyle = makeStyles((theme) => ({
         marginTop: '20vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     me: {
         width: 150,
@@ -38,6 +38,9 @@ const useStyle = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         marginTop: '8%',
+        [theme.breakpoints.down('xs')]: {
+            flexDirection: 'column'
+        }
     },
     whoAmI: {
         whiteSpace: 'pre-wrap',
@@ -84,7 +87,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5">Fullstack Developer 👩🏻‍💻 |  </Typography>
+                            <Typography className={classes.whoAmI} variant="h5">Fullstack Developer 👩🏻‍💻   </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -92,7 +95,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> Sushi Lover 🍣  | </Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Sushi Lover 🍣   </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -100,7 +103,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> Volleyball Player 🏐</Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Volleyball Player 🏐</Typography>  
                         </ScrollAnimation>
                     </Box>          
                 </Box>
