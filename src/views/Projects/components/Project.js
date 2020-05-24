@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import { Box, Typography, Chip } from '@material-ui/core';
+import React from 'react';
+import { Box, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyle = makeStyles((theme) => ({
     project: {
-        height: '40vh',
+        height: '50vh',
         width: '35vw',
         marginBottom: '3vh',
-        boxShadow: "2px 2px 3px 3px #9E9E9E",
+        boxShadow: "1px 1px 3px #9E9E9E",
         cursor: 'pointer',
-        // backgroundColor: theme.palette.background.default,
+        display: 'flex',
+        flexDirection: 'column',
         backgroundColor: theme.palette.white,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '75vw',
             marginBottom: '4vh',
             height: '50vh',
@@ -24,40 +25,57 @@ const useStyle = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    image: {
-        height: '100%',
-        width: '100%'
-    },
-    imageHovered: {
-        backgroundColor: 'rgba(0, 0, 0, .4)', 
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around'
+    header: {
+        height: '30%',
+        [theme.breakpoints.down('sm')]: {
+            height: '40%',
+        }
     },
     title: {
-        color: theme.palette.white,
+        marginTop: '2vh',
         fontFamily: theme.typography.h6.fontFamily,
+        // fontWeight: theme.typography.h5.fontWeight,
+        fontWeight: 600,
+        fontSize: theme.typography.h5.fontSize
     },
-    tagsContainer: {
-    },
-    tag: {
-        marginRight: '1%',
-        marginTop: '1%',
-        [theme.breakpoints.down('xs')]: {
-            marginRight: '2%',
-            marginTop: '2%',
+    description: {
+        marginTop: '2vh',
+        paddingLeft: 20,
+        paddingRight: 20,
+        fontFamily: theme.typography.h6.fontFamily,
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: 10,
+            paddingRight: 10
         }
-    }
+    },
+    linkContainer: {
+        marginTop: '2vh',
+        marginLeft: '2vw',
+        marginBottom: '1vh',
+        width: '15%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
+            width: '25%',
+            marginLeft: '70%',
+        }
+    },
+    link: {
+        textAlign: 'right',
+    },
+    image: {
+        height: '70%',
+        width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            height: '60%',
+        }
+    },
 }));
 
 const Project = (props) => {
     const classes = useStyle();
-    const [hovered, setHovered] = useState(false);
-    const { delay, title, image, tags } = props;
-
-    const toggleClicked = () => setHovered(hovered => !hovered ? true : false);
+    const { delay, title, image, description, link } = props;
         
     return (
         <ScrollAnimation 
@@ -66,32 +84,26 @@ const Project = (props) => {
             initiallyVisible={false}
             animateOnce={true}
         >
-            <Box 
-                className={classes.project} 
-                onMouseEnter={() => setHovered(true)} 
-                onMouseLeave={() => setHovered(false)}
-                onClick={toggleClicked}
-            >
+            <Link href={link} target="_blank" color="inherit" underline="none" title="view project">
                 <Box 
-                    className={classes.image}
-                    style={{
-                        backgroundImage: `url(${image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                    }}
+                    className={classes.project} 
                 >
-                    {hovered && 
-                    <Box className={classes.imageHovered}>
-                        <Typography variant="h5" className={classes.title}>{title}</Typography>
-                        <Box className={classes.tagsContainer}>
-                            {tags.map((tag, index) =>
-                                <Chip key={tag.concat(index)} className={classes.tag} label={tag} color="primary" /> 
-                            )}
-                        </Box>
-                    </Box>}
+                    <Box className={classes.header}>
+                        <Typography className={classes.title}>{title}</Typography>
+                        <Typography className={classes.description}>{description}</Typography>
+                    </Box>
+                    <Box 
+                        className={classes.image}
+                        style={{
+                            backgroundImage: `url(${image})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                        }}
+                    >
+                    </Box>
                 </Box>
-            </Box>
+            </Link>
         </ScrollAnimation>
     )
 };

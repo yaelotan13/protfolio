@@ -58,18 +58,18 @@ const useStyle = makeStyles((theme) => ({
         width: '70%',
         backgroundImage:`url(${rocket})`,
         backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
         [theme.breakpoints.down('xs')]: {
             width: 300,
             height: 300,
-            backgroundSize: 'contain'
         }
     },
     contactInfoContainer: {
         display: 'flex',
         marginTop: '10vh',
-        width: '70%',
+        width: '45vw',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '90vw',
             flexDirection: 'column',
             marginTop: '5vh',
@@ -77,7 +77,7 @@ const useStyle = makeStyles((theme) => ({
         }
     },
     contactInfo: {
-        width: '15vw',
+        width: '20vw',
         height: '30vh',
         borderRadius: 10,
         boxShadow: "1px 1px 3px #9E9E9E",
@@ -85,8 +85,7 @@ const useStyle = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center', 
-        // background: colors.gradient,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '80vw',
             height: '10vh',
             flexDirection: 'row',
@@ -99,7 +98,7 @@ const useStyle = makeStyles((theme) => ({
         marginBottom: '3vh',
         height: '7vh',
         width: '7vw',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: '2vh',
             height: '6vh',
             width: '6vw',
@@ -109,7 +108,7 @@ const useStyle = makeStyles((theme) => ({
     },
     info: {
         fontSize: theme.typography.h5.fontSize,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             fontSize: theme.typography.h6.fontSize,
         }
     }
@@ -146,7 +145,9 @@ const Contact = (props) => {
                     >
                         <Box className={classes.contactInfo}>
                             <PhoneIphoneIcon className={classes.icon} />
-                            <Typography className={classes.info}>054-6323450</Typography>
+                            <Typography className={classes.info}>
+                                <a href="tel:054-6323450">054-6323450</a>
+                            </Typography>
                         </Box>
                     </ScrollAnimation> 
                     <ScrollAnimation 
@@ -157,7 +158,9 @@ const Contact = (props) => {
                     >
                     <Box className={classes.contactInfo}>
                         <MailOutlineIcon className={classes.icon} />
-                        <Typography className={classes.info}>yaelotan19@gmail.com</Typography>
+                        <Typography className={classes.info}>
+                            <a href="mailto:yaelotan19@gmail.com">yaelotan19@gmail.com</a>
+                        </Typography>
                     </Box>
                     </ScrollAnimation> 
                 </Box>

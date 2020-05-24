@@ -14,6 +14,8 @@ import NODE from '../../../assets/images/node.png';
 import POSTGRESQL from '../../../assets/images/postgresql.png';
 import REACT from '../../../assets/images/react.png';
 import SASS from '../../../assets/images/sass.png';
+import TRAVIS from '../../../assets/images/travis.png';
+import CYPRESS from '../../../assets/images/cypress.png';
 
 const useStyle = makeStyles((theme) => ({
     container: {
@@ -30,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
 
 const DevLanguagesLogos = (props) => {
     const classes = useStyle();
-    const logos = [HTML, CSS, JS, REACT, NODE, POSTGRESQL, SASS, TS, ES6, JAVA, C];
+    const logos = [HTML, CSS, JS, REACT, NODE, POSTGRESQL, SASS, TS, ES6, CYPRESS, TRAVIS, JAVA, C];
     const INITIAL_DELAY = 500;
 
     return (
@@ -49,8 +51,8 @@ const DevLanguagesLogos = (props) => {
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                width: 90,
-                                height: 90,
+                                width: 80,
+                                height: 80,
                                 margin: 2
                             }} 
                         />
