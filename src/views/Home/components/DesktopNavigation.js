@@ -13,10 +13,10 @@ const useStyle = makeStyles((theme) => ({
     navBarItem: {
         marginLeft: '5%',
         fontFamily: theme.typography.h6.fontFamily,
-        fontWeight: theme.typography.h5.fontWeight,
+        fontWeight: theme.typography.h2.fontWeight,
     },
     highlightNavBar: {
-        color: theme.palette.primary.main
+        color: theme.palette.primary.dark
     },
 }));
 

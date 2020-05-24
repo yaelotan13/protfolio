@@ -4,5 +4,5 @@ export const colors = {
     grey: '#e0e0e0',
     lightGrey: '#fafafa',
     darkGrey: '#424242',
-    gradient: 'linear-gradient(90deg, rgba(208,49,87,1) 18%, rgba(232,45,8,1) 42%, rgba(255,98,0,1) 72%)'
+    gradient: 'linear-gradient(90deg, rgba(208,78,49,1) 10%, rgba(230,94,21,1) 48%, rgba(235,157,88,1) 74%)'
 }

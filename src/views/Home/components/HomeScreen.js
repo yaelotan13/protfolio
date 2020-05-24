@@ -59,7 +59,6 @@ const useStyle = makeStyles((theme) => ({
         width: 60,
         cursor: 'pointer',
         color: theme.palette.white,
-        // animation: 'MoveUpDown 1s linear infinite'
     },
 }));
 

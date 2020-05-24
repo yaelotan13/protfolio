@@ -83,7 +83,7 @@ const Projects = (props) => {
         <Box className={classes.container}>
             <Box>
                 <Box className={classes.headerContainer}>
-                    <SubTitle delay={500} title="Projects" />
+                    <SubTitle delay={200} title="Projects" />
                     <Box className={classes.subHeaderContainer}>
                         <Typography className={classes.description} variant="subtitle1">For more details, check out my </Typography>
                         <Link href="https://github.com/yaelotan13" target="_blank" color="inherit">
@@ -97,7 +97,7 @@ const Projects = (props) => {
                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                                 <Project 
                                     key={project.id} 
-                                    delay={index * 300}
+                                    delay={index * 200}
                                     title={project.title} 
                                     image={project.image} 
                                     tags={project.tags}

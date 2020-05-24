@@ -31,7 +31,7 @@ const data = [
 
 const Educations = (props) => {
     const classes = useStyle();
-    const INITIAL_DELAY = 400;
+    const INITIAL_DELAY = 300;
 
     return (
         <Box>
@@ -39,7 +39,7 @@ const Educations = (props) => {
                 {data.map((education, index) => 
                     <ScrollAnimation 
                         animateIn='fadeInUp'
-                        delay={INITIAL_DELAY + index * 150}
+                        delay={INITIAL_DELAY + index * 130}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
