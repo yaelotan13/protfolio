@@ -32,7 +32,10 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('sm')]: {
-            height: '300vh',
+            height: '160vh',
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '280vh',
         }
     },
     firthScreen: {

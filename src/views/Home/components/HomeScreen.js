@@ -35,6 +35,7 @@ const useStyle = makeStyles((theme) => ({
             
         },
         [theme.breakpoints.down('xs')]: {
+            fontWeight: theme.typography.h5.fontWeight,
             fontSize: '12px',
         }
     },

@@ -19,8 +19,8 @@ export default {
   },
   h3: {
     color: palette.text.primary,
-    fontWeight: 700,
-    fontSize: '24px',
+    fontWeight: 600,
+    fontSize: '22px',
     letterSpacing: '-0.06px',
     lineHeight: '28px',
     fontFamily: "'Muli', sans-serif",

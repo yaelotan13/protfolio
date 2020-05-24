@@ -1,28 +1,52 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 
-import HomeIcon from '@material-ui/icons/Home';
-import FaceIcon from '@material-ui/icons/Face';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import email from '../assets/images/email-nav.png';
+import home from '../assets/images/home-nav.png';
+import about from '../assets/images/about-nav.png';
+import rocket from '../assets/images/rocket-nav.png';
 
 export const getScreens = () => ['Home', 'About', 'Projects', 'Conatct'];
 
 export const getDrawerIcon = (index) => {
+    const iconStyle = {
+        width: 30,
+        height: 30,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+    }
+
     switch (index) {
         case 0: {
-            return <HomeIcon />
+            return <Box style={{
+                ...iconStyle, 
+                backgroundImage: `url(${home})`
+            }} />
         }
         case 1: {
-            return <FaceIcon />
+            return <Box style={{
+                ...iconStyle,
+                backgroundImage: `url(${about})` 
+            }} />
         }
         case 2: {
-            return <WhatshotIcon />
+            return <Box style={{
+                ...iconStyle,
+                backgroundImage: `url(${rocket})` 
+            }} />
         }
         case 3: {
-            return <MailOutlineIcon />
+            return <Box style={{
+                ...iconStyle,
+                backgroundImage: `url(${email})` 
+            }} />
         }
         default: {
-            return <HomeIcon />
+            return <Box style={{
+                ...iconStyle,
+                backgroundImage: `url(${about})` 
+            }} />
         }
     }
 };

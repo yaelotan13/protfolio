@@ -17,7 +17,7 @@ const useStyle = makeStyles((theme) => ({
         padding: '6%',
     },
     headerContainer: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             marginLeft: '-5%',
         }
     },
@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
         marginTop: '-4%',
         marginLeft: '8%',
         marginBottom: '4%',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             marginLeft: '12%',
             marginTop: '-8%',
             marginBottom: '16%',
