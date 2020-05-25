@@ -16,7 +16,7 @@ const useStyle = makeStyles(theme => ({
         fontSize: theme.typography.h5.fontSize,
         fontWeight: theme.typography.h3.fontWeight,
         [theme.breakpoints.down('xs')]: {
-            fontSize: theme.typography.h6.fontSize,
+            fontSize: 12,
         }
     }
 }));

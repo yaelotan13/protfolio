@@ -23,7 +23,7 @@ const useStyle = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '75vw',
             marginBottom: '4vh',
-            height: '45vh',
+            height: '50vh',
         }
     },
     titleContainer: {
@@ -52,11 +52,13 @@ const useStyle = makeStyles((theme) => ({
     },
     linkContainer: {
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 5
     },
     linkSource: {
         fontFamily: theme.typography.h6.fontFamily,
-        fontSize: 14
+        fontSize: 14,
+        color: theme.palette.text.link
     },
     linkIcon: {
         width: 18,
