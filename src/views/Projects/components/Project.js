@@ -53,7 +53,9 @@ const useStyle = makeStyles((theme) => ({
     linkContainer: {
         display: 'flex',
         alignItems: 'center',
-        marginTop: 8
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 8
+        }
     },
     linkSource: {
         fontFamily: theme.typography.h6.fontFamily,
