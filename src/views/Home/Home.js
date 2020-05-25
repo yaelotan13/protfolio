@@ -9,6 +9,7 @@ import { colors } from '../../constants';
 import AboutMe from '../AboutMe';
 import Projects from '../Projects';
 import Contact from '../Contact';
+import Footer from '../Footer';
 import { Navigation, HomeScreen } from './components';
 
 const useStyles = makeStyles((theme) => ({
@@ -79,7 +80,8 @@ const Home = (props) => {
                         <Contact />
                     </Box>
                 </ScrollAnimation>
-            </Element>              
+            </Element>  
+            <Footer />            
         </Box>
     )
 };

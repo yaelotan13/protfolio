@@ -7,7 +7,7 @@ import { Project } from './components';
 
 import coronaMap from '../../assets/images/corona-trans.png';
 import gifts from '../../assets/images/gift-app-trans.png';
-import Eran from '../../assets/images/eran-trans.png';
+import Eran from '../../assets/images/eran.png';
 import admin from '../../assets/images/admin-trans.png';
 import authServer from '../../assets/images/auth-trans.png';
 
@@ -58,22 +58,23 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 class ProjectData {
-    constructor(id, title, description, image, tags, link) {
+    constructor(id, title, description, image, tags, link, linkSource) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.image = image;
         this.tags = tags;
-        this.link = link
+        this.link = link;
+        this.linkSource = linkSource;
     }
 };
 
 const data = [
-    new ProjectData(0, "Affiliate Gifts App", "Shop for gifts based on hobbies and personality from multiple online stores in one place", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'PostgreSQL', 'AWS S3', 'Mobile'], "https://github.com/yaelotan13/gift-app-ui"),
-    new ProjectData(1, "Corona Heat Map", "Corona symptoms survey and a heat map presenting the distribution of corona around your area", coronaMap, ['React.JS', 'Redux', 'Material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'Responsive'], "https://corona.balistraresearch.com:5000"),
-    new ProjectData(2, "Gift App Admin Website", "Admin website to manage the gifts app products information and categories relationships", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify'], "https://github.com/yaelotan13/gift-app-admin-ui"), 
-    new ProjectData(3, "Authentication Server", "Server that manages log users in, sign new users up and log out with tokens and cookies", authServer, ['React.JS', 'Redux', 'Node.js', 'PostgreSQL', 'Express', 'Tokens', 'Cookies'], "https://github.com/yaelotan13/networking/tree/master/Node/authentication-server"),
-    new ProjectData(4, "Professional Personal Website", "Website for a scientist that showcast recent publications, about, and contact information", Eran, ['React.JS', 'material UI', 'responsive'], "https://github.com/yaelotan13/eran-website"),
+    new ProjectData(0, "Affiliate Gifts App", "Shop for gifts based on hobbies and personality from multiple online stores in one place", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'PostgreSQL', 'AWS S3', 'Mobile'], "https://github.com/yaelotan13/gift-app-ui", "GitHub"),
+    new ProjectData(1, "Corona Heat Map", "Corona symptoms survey and a heat map presenting the distribution of corona around your area", coronaMap, ['React.JS', 'Redux', 'Material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'Responsive'], "https://corona.balistraresearch.com:5000", "website"),
+    new ProjectData(3, "Professional Personal Website", "Website for a scientist that showcast recent publications, about, and contact information", Eran, ['React.JS', 'material UI', 'responsive'], "https://eran-vos.herokuapp.com/", "website"),
+    new ProjectData(4, "Gift App Admin Website", "Admin website to manage the gifts app products information and categories relationships", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify'], "https://github.com/yaelotan13/gift-app-admin-ui", "GitHub"), 
+    new ProjectData(5, "Authentication Server", "Server that manages log users in, sign new users up and log out with tokens and cookies", authServer, ['React.JS', 'Redux', 'Node.js', 'PostgreSQL', 'Express', 'Tokens', 'Cookies'], "https://github.com/yaelotan13/networking/tree/master/Node/authentication-server", "GitHub"),
 ];
 
 const Projects = (props) => {
@@ -103,6 +104,7 @@ const Projects = (props) => {
                                     tags={project.tags}
                                     description={project.description}
                                     link={project.link}
+                                    linkSource={project.linkSource}
                                 />
                             </Grid>
                         )}
