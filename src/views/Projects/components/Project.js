@@ -3,6 +3,8 @@ import { Box, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
 
+import link from '../../../assets/images/link.png';
+
 const useStyle = makeStyles((theme) => ({
     project: {
         height: '50vh',
@@ -15,9 +17,13 @@ const useStyle = makeStyles((theme) => ({
         flexDirection: 'column',
         backgroundColor: theme.palette.white,
         [theme.breakpoints.down('sm')]: {
+            width: '35vw',
+            height: '40vh',
+        },
+        [theme.breakpoints.down('xs')]: {
             width: '75vw',
             marginBottom: '4vh',
-            height: '50vh',
+            height: '45vh',
         }
     },
     titleContainer: {
@@ -28,6 +34,9 @@ const useStyle = makeStyles((theme) => ({
     },
     header: {
         height: '30%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         [theme.breakpoints.down('sm')]: {
             height: '40%',
         }
@@ -36,7 +45,27 @@ const useStyle = makeStyles((theme) => ({
         marginTop: '2vh',
         fontFamily: theme.typography.h6.fontFamily,
         fontWeight: 600,
-        fontSize: theme.typography.h5.fontSize
+        fontSize: theme.typography.h5.fontSize,
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '4vh',
+        }
+    },
+    linkContainer: {
+        display: 'flex',
+        alignItems: 'center'
+    },
+    linkSource: {
+        fontFamily: theme.typography.h6.fontFamily,
+        fontSize: 14
+    },
+    linkIcon: {
+        width: 18,
+        height: 18, 
+        marginTop: 5,
+        marginRight: 5,
+        backgroundImage: `url(${link})`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat'
     },
     description: {
         marginTop: '2vh',
@@ -48,34 +77,21 @@ const useStyle = makeStyles((theme) => ({
             paddingRight: 10
         }
     },
-    linkContainer: {
-        marginTop: '2vh',
-        marginLeft: '2vw',
-        marginBottom: '1vh',
-        width: '15%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-            width: '25%',
-            marginLeft: '70%',
-        }
-    },
-    link: {
-        textAlign: 'right',
-    },
     image: {
         height: '70%',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
             height: '60%',
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '70%',
         }
     },
 }));
 
 const Project = (props) => {
     const classes = useStyle();
-    const { delay, title, image, description, link } = props;
+    const { delay, title, image, description, link, linkSource } = props;
         
     return (
         <ScrollAnimation 
@@ -90,6 +106,10 @@ const Project = (props) => {
                 >
                     <Box className={classes.header}>
                         <Typography className={classes.title}>{title}</Typography>
+                        <Box className={classes.linkContainer}>
+                            <Box className={classes.linkIcon} />
+                            <Typography className={classes.linkSource}>{linkSource === 'website' ? 'view website' : 'view on GitHub'}</Typography>
+                        </Box>
                         <Typography className={classes.description}>{description}</Typography>
                     </Box>
                     <Box 

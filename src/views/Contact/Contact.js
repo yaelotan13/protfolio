@@ -10,7 +10,7 @@ import rocket from '../../assets/images/rocket.gif';
 const useStyle = makeStyles((theme) => ({
     container: {
         display: 'flex',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             flexDirection: 'column-reverse'
         }
     },
@@ -20,7 +20,7 @@ const useStyle = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '100vw',
             height: '50vh',
         }
@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
     mainTitle: {
         marginTop: '25vh',
         fontFamily: theme.typography.h1.fontFamily,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: 0,
             fontSize: theme.typography.h3.fontSize,
         }
@@ -36,8 +36,9 @@ const useStyle = makeStyles((theme) => ({
     subTitle: {
         marginTop: '2vh',
         fontFamily: theme.typography.h1.fontFamily,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: '1vh',
+            fontSize: theme.typography.h5.fontSize
         }
     },
     imageContainer: {
@@ -46,7 +47,7 @@ const useStyle = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             marginTop: '10vh',
             width: '100vw',
             height: '50vh',
@@ -58,7 +59,8 @@ const useStyle = makeStyles((theme) => ({
         backgroundImage:`url(${rocket})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
-        [theme.breakpoints.down('xs')]: {
+        backgroundPosition: 'center',
+        [theme.breakpoints.down('sm')]: {
             width: 300,
             height: 300,
         }
@@ -85,36 +87,42 @@ const useStyle = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center', 
         [theme.breakpoints.down('sm')]: {
-            width: '80vw',
+            width: '50vw',
             height: '10vh',
             flexDirection: 'row',
             justifyContent: 'flex-start',
             alignItems: 'center',
             marginBottom: '3vh'
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: '60vw',
         }
     },
     icon: {
         marginBottom: '3vh',
         height: '7vh',
         width: '7vw',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
         [theme.breakpoints.down('sm')]: {
+            height: 30,
+            width: 30,
             marginTop: '2vh',
-            height: '6vh',
-            width: '6vw',
             marginLeft: '3vw',
             marginRight: '5vw'
         }
     },
     iphoneIcon: {
         backgroundImage: `url(${phone})`,
-        backgroundSize: 'contain'
+
     },
     emailIcon: {
         backgroundImage: `url(${email})`,
-        backgroundSize: 'contain'
     },
     info: {
         fontSize: theme.typography.h5.fontSize,
+        fontFamily: theme.typography.h5.fontFamily,
         [theme.breakpoints.down('sm')]: {
             fontSize: theme.typography.h6.fontSize,
         }
@@ -129,7 +137,7 @@ const Contact = (props) => {
             <Box className={classes.content}>
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={400}
+                    delay={300}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -137,7 +145,7 @@ const Contact = (props) => {
                 </ScrollAnimation>   
                 <ScrollAnimation 
                     animateIn='fadeIn'
-                    delay={800}
+                    delay={500}
                     initiallyVisible={false}
                     animateOnce={true}
                 >
@@ -146,7 +154,7 @@ const Contact = (props) => {
                 <Box className={classes.contactInfoContainer}>
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={1400}
+                        delay={900}
                         initiallyVisible={false}
                         animateOnce={true}
                     >
@@ -159,7 +167,7 @@ const Contact = (props) => {
                     </ScrollAnimation> 
                     <ScrollAnimation 
                         animateIn='fadeIn'
-                        delay={1600}
+                        delay={1200}
                         initiallyVisible={false}
                         animateOnce={true}
                     >

@@ -1,13 +1,27 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Typography, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-scroll';
 
+import yael from '../../../assets/images/me1.jpg';
+
 const useStyle = makeStyles((theme) => ({
     content: {
         marginTop: '20vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    me: {
+        width: 150,
+        height: 150,
+        marginBottom: '5vh',
+        [theme.breakpoints.down('xs')]: {
+            width: 100,
+            height: 100
+        }
     },
     mainHeader: {
         color: theme.palette.white,
@@ -24,6 +38,9 @@ const useStyle = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         marginTop: '8%',
+        [theme.breakpoints.down('xs')]: {
+            flexDirection: 'column'
+        }
     },
     whoAmI: {
         whiteSpace: 'pre-wrap',
@@ -35,15 +52,19 @@ const useStyle = makeStyles((theme) => ({
             
         },
         [theme.breakpoints.down('xs')]: {
+            fontWeight: theme.typography.h5.fontWeight,
             fontSize: '12px',
         }
     },
     icon: {
-        marginTop: '50vh',
+        marginTop: '25vh',
         height: 60,
         width: 60,
         cursor: 'pointer',
         color: theme.palette.white,
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '15vh',
+        }
     },
 }));
 
@@ -60,6 +81,7 @@ const HomeScreen = (props) => {
                 animateOnce={true}
             >
                 <Box className={classes.content}>
+                    <Avatar className={classes.me} alt="Yael Lotan" src={yael} />
                     <Typography className={classes.mainHeader} variant="h1">Hello, I am Yael</Typography>
                     <Box className={classes.whoAmIContainer}>
                         <ScrollAnimation
@@ -68,7 +90,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5">Fullstack Developer 👩🏻‍💻 |  </Typography>
+                            <Typography className={classes.whoAmI} variant="h5">Fullstack Developer 👩🏻‍💻   </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -76,7 +98,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> Sushi Lover 🍣  | </Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Sushi Lover 🍣   </Typography>
                         </ScrollAnimation>
                         <ScrollAnimation
                             animateIn='fadeInDown'
@@ -84,7 +106,7 @@ const HomeScreen = (props) => {
                             initiallyVisible={false}
                             animateOnce={true}
                         >
-                            <Typography className={classes.whoAmI} variant="h5"> Volleyball Player 🏐</Typography>
+                            <Typography className={classes.whoAmI} variant="h5"> Volleyball Player 🏐</Typography>  
                         </ScrollAnimation>
                     </Box>          
                 </Box>

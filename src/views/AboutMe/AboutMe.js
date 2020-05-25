@@ -31,7 +31,7 @@ const AboutMe = (props) => {
                 <Educations />
             </Box>
             <Box className={classes.skillsContainer}>
-                <SubTitle delay={800} title="Skills" />
+                <SubTitle delay={500} title="Skills" />
                 <DevLanguagesLogos />
             </Box>
         </Box>

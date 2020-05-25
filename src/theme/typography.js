@@ -11,7 +11,7 @@ export default {
   },
   h2: {
     color: palette.text.primary,
-    fontWeight: 500,
+    fontWeight: 700,
     fontSize: '29px',
     letterSpacing: '-0.24px',
     lineHeight: '32px',
@@ -19,8 +19,8 @@ export default {
   },
   h3: {
     color: palette.text.primary,
-    fontWeight: 700,
-    fontSize: '24px',
+    fontWeight: 600,
+    fontSize: '22px',
     letterSpacing: '-0.06px',
     lineHeight: '28px',
     fontFamily: "'Muli', sans-serif",

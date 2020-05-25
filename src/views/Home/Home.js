@@ -9,6 +9,7 @@ import { colors } from '../../constants';
 import AboutMe from '../AboutMe';
 import Projects from '../Projects';
 import Contact from '../Contact';
+import Footer from '../Footer';
 import { Navigation, HomeScreen } from './components';
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: theme.palette.white,
         [theme.breakpoints.down('xs')]: {
-            height: '180vh',
+            height: '190vh',
         }
     },
     thirdScreen: {
@@ -32,7 +33,10 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: theme.palette.background.default,
         [theme.breakpoints.down('sm')]: {
-            height: '300vh',
+            height: '160vh',
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '280vh',
         }
     },
     firthScreen: {
@@ -76,7 +80,8 @@ const Home = (props) => {
                         <Contact />
                     </Box>
                 </ScrollAnimation>
-            </Element>              
+            </Element>  
+            <Footer />            
         </Box>
     )
 };
