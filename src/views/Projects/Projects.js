@@ -10,6 +10,7 @@ import gifts from '../../assets/images/gift-app-trans.png';
 import Eran from '../../assets/images/eran.png';
 import admin from '../../assets/images/admin-trans.png';
 import authServer from '../../assets/images/authentication-server.png';
+import tuli from '../../assets/images/tuli.png';
 
 const useStyle = makeStyles((theme) => ({
     container: {
@@ -71,10 +72,11 @@ class ProjectData {
 
 const data = [
     new ProjectData(0, "Affiliate Gifts App", "Shop for gifts based on hobbies and personality from multiple online stores in one place", gifts, ['React Native', 'Redux', 'Saga', 'Node.js', 'PostgreSQL', 'AWS S3', 'Mobile'], "https://github.com/yaelotan13/gift-app-ui", "GitHub"),
-    new ProjectData(1, "Corona Heat Map", "Corona symptoms survey and a heat map presenting the distribution of corona around your area", coronaMap, ['React.JS', 'Redux', 'Material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'Responsive'], "https://corona.balistraresearch.com:5000", "website"),
-    new ProjectData(2, "Authentication Server", "Server that manages log users in, sign new users up and log out with tokens and cookies", authServer, ['React.JS', 'Redux', 'Node.js', 'PostgreSQL', 'Express', 'Tokens', 'Cookies'], "https://master.d1gdz1he65nmp7.amplifyapp.com/", "website"),
-    new ProjectData(3, "Professional Personal Website", "Website for a scientist that showcast recent publications, about, and contact information", Eran, ['React.JS', 'material UI', 'responsive'], "https://eran-vos.herokuapp.com/", "website"),
-    new ProjectData(4, "Gift App Admin Website", "Admin website to manage the gifts app products information and categories relationships", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify'], "https://github.com/yaelotan13/gift-app-admin-ui", "GitHub"), 
+    new ProjectData(1, "Tulis Event Website", "A website for an event planner that displays her events and invite people to connect", tuli, ['React.JS', 'Material UI', 'Node.js', 'Responsive'], "https://github.com/yaelotan13/tuli-website", "GitHub"),
+    new ProjectData(2, "Corona Heat Map", "Corona symptoms survey and a heat map presenting the distribution of corona around your area", coronaMap, ['React.JS', 'Redux', 'Material UI', 'Node.js', 'MongoDB', 'Google Maps API', 'Responsive'], "https://corona.balistraresearch.com:5000", "website"),
+    new ProjectData(3, "Authentication Server", "Server that manages log users in, sign new users up and log out with tokens and cookies", authServer, ['React.JS', 'Redux', 'Node.js', 'PostgreSQL', 'Express', 'Tokens', 'Cookies'], "https://master.d1gdz1he65nmp7.amplifyapp.com/", "website"),
+    new ProjectData(4, "Professional Personal Website", "Website for a scientist that showcast recent publications, about, and contact information", Eran, ['React.JS', 'material UI', 'responsive'], "https://eran-vos.herokuapp.com/", "website"),
+    new ProjectData(5, "Gift App Admin Website", "Admin website to manage the gifts app products information and categories relationships", admin, ['React.JS', 'Redux', 'Saga', 'material UI', 'Node.js', 'PostgreSQL', 'AWS S3', 'AWS Amplify'], "https://github.com/yaelotan13/gift-app-admin-ui", "GitHub"), 
 ];
 
 const Projects = (props) => {
