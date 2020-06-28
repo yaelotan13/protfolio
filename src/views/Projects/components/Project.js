@@ -112,7 +112,7 @@ const Project = (props) => {
                         <Typography className={classes.title}>{title}</Typography>
                         <Box className={classes.linkContainer}>
                             <Box className={classes.linkIcon} />
-                            <Typography className={classes.linkSource}>{linkSource === 'website' ? 'view website' : 'view on GitHub'}</Typography>
+                            <Typography className={classes.linkSource}>{linkSource === 'Website' ? 'view website' : 'view on GitHub'}</Typography>
                         </Box>
                         <Typography className={classes.description}>{description}</Typography>
                     </Box>
