@@ -116,7 +116,7 @@ const HomeScreen = (props) => {
                     initiallyVisible={false}
                     animateOnce={true}
                 >
-                    <Link activeClass="active" className="screen2" to="screen2" spy={true} smooth={true} duration={500}>
+                    <Link activeClass="active" className="screen2" to="screen2" spy={true} smooth={true} duration={900}>
                         <ExpandMoreIcon className={classes.icon} />
                     </Link>
                 </ScrollAnimation>
